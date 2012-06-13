@@ -22,7 +22,6 @@ new threads simultaneously.
 1. Load the process manager and some scripts:
 
     ```html
-    <pre><code data-language="php">
 include_once('class.process_manager.php');		//load the class file
 $manager              = new Processmanager();	//create the manager object
 $manager->executable  = "php";					//the Linux executable
@@ -37,10 +36,9 @@ $manager->addScript("sleep.php", 4);
 $manager->addScript("sleep.php", 5);
 $manager->addScript("sleep.php");				//no max execution time defaults to 300 seconds
 $manager->exec();								//start processing through the code
-echo 'Completed all tasks';</code></pre>
+echo 'Completed all tasks';
     ```
 
-    ```
 <a name="acknowledgements"></a>
 ## 2. Acknowledgements
 Matou Havlena of havlena.net came up with the original concept and posted it on PHP.NET
