@@ -17,7 +17,12 @@ declare(strict_types=1);
  *   php concurrent-prompts.php
  */
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+// Use local vendor if available (for Claude SDK), fallback to root
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+} else {
+    require_once __DIR__ . '/../../vendor/autoload.php';
+}
 
 use DaleHurley\ProcessManager\ProcessManager;
 use DaleHurley\ProcessManager\Output\ConsoleOutputHandler;
@@ -100,4 +105,3 @@ $avgTimePerCall = $totalTime / count($results);
 $sequentialEstimate = $avgTimePerCall * count($results);
 echo "💡 Sequential estimate: ~" . round($sequentialEstimate * 3, 1) . "s\n";
 echo "⚡ Parallel actual: {$totalTime}s\n";
-

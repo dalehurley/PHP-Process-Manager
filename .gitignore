@@ -2,6 +2,10 @@
 /vendor/
 composer.lock
 
+# Example dependencies (installed separately)
+/examples/claude-sdk/vendor/
+/examples/claude-sdk/composer.lock
+
 # IDE & Editors
 .idea/
 .vscode/

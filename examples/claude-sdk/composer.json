@@ -1,0 +1,19 @@
+{
+    "name": "dalehurley/process-manager-claude-examples",
+    "description": "Example integration of PHP Process Manager with Claude SDK",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "claude-php/claude-php-sdk": "^0.5",
+        "dalehurley/process-manager": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DaleHurley\\ProcessManager\\": "../../src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
+

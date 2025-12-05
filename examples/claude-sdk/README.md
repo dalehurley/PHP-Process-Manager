@@ -2,18 +2,25 @@
 
 These examples demonstrate how to use PHP Process Manager with the [Claude PHP SDK](https://github.com/claude-php/Claude-PHP-SDK) for parallel AI processing.
 
-## Prerequisites
+## Setup
 
-Install the Claude PHP SDK:
+Install dependencies for these examples:
 
 ```bash
-composer require claude-php/claude-php-sdk
+cd examples/claude-sdk
+composer install
 ```
 
 Set your API key:
 
 ```bash
 export ANTHROPIC_API_KEY="your-api-key-here"
+```
+
+Or create a `.env` file in the project root:
+
+```bash
+echo 'ANTHROPIC_API_KEY=your-api-key-here' > ../../.env
 ```
 
 ## Examples

@@ -9,7 +9,12 @@ declare(strict_types=1);
  * It receives prompt data as a base64-encoded JSON argument.
  */
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+// Use local vendor if available (for Claude SDK), fallback to root
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+} else {
+    require_once __DIR__ . '/../../vendor/autoload.php';
+}
 
 // Check for API key (optional - will use simulation if not set)
 $apiKey = getenv('ANTHROPIC_API_KEY');
@@ -57,7 +62,6 @@ try {
     ]);
 
     exit(0);
-
 } catch (Throwable $e) {
     fwrite(STDERR, "Error: " . $e->getMessage() . "\n");
     exit(1);
@@ -86,4 +90,3 @@ function simulateClaudeResponse(string $prompt): string
 
     return "This is a simulated response. Install claude-php/claude-php-sdk for real API calls.";
 }
-

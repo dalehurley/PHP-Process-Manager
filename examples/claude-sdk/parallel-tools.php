@@ -21,7 +21,12 @@ declare(strict_types=1);
  *   php parallel-tools.php
  */
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+// Use local vendor if available (for Claude SDK), fallback to root
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+} else {
+    require_once __DIR__ . '/../../vendor/autoload.php';
+}
 
 use DaleHurley\ProcessManager\ProcessManager;
 use DaleHurley\ProcessManager\Output\ConsoleOutputHandler;

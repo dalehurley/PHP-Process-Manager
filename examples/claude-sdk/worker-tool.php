@@ -9,7 +9,12 @@ declare(strict_types=1);
  * within a parallel processing context.
  */
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+// Use local vendor if available (for Claude SDK), fallback to root
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+} else {
+    require_once __DIR__ . '/../../vendor/autoload.php';
+}
 
 // Check for API key (optional - will use simulation if not set)
 $apiKey = getenv('ANTHROPIC_API_KEY');
