@@ -1,7 +1,10 @@
 # PHP Process Manager
 
-[![PHP Version](https://img.shields.io/badge/php-%3E%3D8.2-8892BF.svg)](https://php.net/)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/dalehurley/process-manager.svg)](https://packagist.org/packages/dalehurley/process-manager)
+[![Total Downloads](https://img.shields.io/packagist/dt/dalehurley/process-manager.svg)](https://packagist.org/packages/dalehurley/process-manager)
+[![PHP Version](https://img.shields.io/packagist/php-v/dalehurley/process-manager.svg)](https://packagist.org/packages/dalehurley/process-manager)
+[![License](https://img.shields.io/packagist/l/dalehurley/process-manager.svg)](LICENSE)
+[![Tests](https://img.shields.io/github/actions/workflow/status/dalehurley/PHP-Process-Manager/tests.yml?branch=master&label=tests)](https://github.com/dalehurley/PHP-Process-Manager/actions)
 
 A lightweight **parallel process runner** for PHP. Execute multiple scripts or commands concurrently with configurable parallelism, timeouts, and real-time output tracking.
 
