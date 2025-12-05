@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2025-12-05
+
+### Added
+
+- Claude SDK integration examples (`examples/claude-sdk/`)
+  - `concurrent-prompts.php` - Run multiple Claude API calls in parallel
+  - `parallel-tools.php` - Execute tool-calling workflows concurrently
+  - Worker scripts with simulation fallback for demo mode
+- Separate `composer.json` for examples with Claude SDK dependency
+- Documentation for Claude SDK integration use cases
+
 ## [2.0.1] - 2025-12-05
 
 ### Added
@@ -66,7 +77,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/dalehurley/PHP-Process-Manager/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/dalehurley/PHP-Process-Manager/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/dalehurley/PHP-Process-Manager/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/dalehurley/PHP-Process-Manager/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/dalehurley/PHP-Process-Manager/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/dalehurley/PHP-Process-Manager/releases/tag/v1.0.0
