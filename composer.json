@@ -1,0 +1,75 @@
+{
+    "name": "dalehurley/process-manager",
+    "description": "A lightweight parallel process runner for PHP. Execute multiple scripts concurrently with configurable parallelism, timeouts, and result tracking.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "process",
+        "manager",
+        "multi-process",
+        "concurrent",
+        "parallel",
+        "background",
+        "tasks",
+        "worker",
+        "pool",
+        "async",
+        "batch",
+        "cli"
+    ],
+    "homepage": "https://github.com/dalehurley/PHP-Process-Manager",
+    "authors": [
+        {
+            "name": "Dale Hurley",
+            "homepage": "https://dalehurley.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/dalehurley/PHP-Process-Manager/issues",
+        "source": "https://github.com/dalehurley/PHP-Process-Manager"
+    },
+    "require": {
+        "php": ">=8.2",
+        "ext-pcntl": "*"
+    },
+    "suggest": {
+        "ext-posix": "For improved process management capabilities"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0 || ^11.0",
+        "phpstan/phpstan": "^1.10 || ^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DaleHurley\\ProcessManager\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DaleHurley\\ProcessManager\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test:coverage": "phpunit --coverage-html coverage",
+        "analyse": "phpstan analyse src --level=8",
+        "check": [
+            "@analyse",
+            "@test"
+        ]
+    },
+    "scripts-descriptions": {
+        "test": "Run PHPUnit test suite",
+        "test:coverage": "Run tests with HTML coverage report",
+        "analyse": "Run PHPStan static analysis",
+        "check": "Run all checks (analysis + tests)"
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

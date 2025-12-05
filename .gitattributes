@@ -1,0 +1,30 @@
+# Auto detect text files and normalise line endings
+* text=auto eol=lf
+
+# Explicitly declare text files
+*.php text
+*.md text
+*.json text
+*.yml text
+*.yaml text
+*.xml text
+*.txt text
+
+# Denote binary files
+*.png binary
+*.jpg binary
+*.gif binary
+
+# Export ignore (excluded from composer archive/packagist)
+/.editorconfig export-ignore
+/.gitattributes export-ignore
+/.github export-ignore
+/.gitignore export-ignore
+/examples export-ignore
+/tests export-ignore
+/phpunit.xml.dist export-ignore
+/phpstan.neon export-ignore
+/CHANGELOG.md export-ignore
+/CONTRIBUTING.md export-ignore
+/SECURITY.md export-ignore
+
