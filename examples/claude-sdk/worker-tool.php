@@ -113,9 +113,17 @@ try {
     $claudeResponse = '';
 
     foreach ($message->content as $block) {
-        if ($block->type === 'tool_use') {
+        // Handle both object and array format
+        $blockType = is_array($block) ? ($block['type'] ?? '') : ($block->type ?? '');
+        
+        if ($blockType === 'tool_use') {
+            // Extract tool use data
+            $toolName = is_array($block) ? $block['name'] : $block->name;
+            $toolInput = is_array($block) ? $block['input'] : $block->input;
+            $toolId = is_array($block) ? $block['id'] : $block->id;
+            
             // Execute the tool
-            $toolResult = executeLocalTool($block->name, $block->input);
+            $toolResult = executeLocalTool($toolName, $toolInput);
 
             // Get Claude's interpretation by sending tool result back
             $followUp = $client->messages()->create([
@@ -130,7 +138,7 @@ try {
                         'content' => [
                             [
                                 'type' => 'tool_result',
-                                'tool_use_id' => $block->id,
+                                'tool_use_id' => $toolId,
                                 'content' => json_encode($toolResult),
                             ]
                         ]
@@ -139,13 +147,14 @@ try {
             ]);
 
             foreach ($followUp->content as $followBlock) {
-                if ($followBlock->type === 'text') {
-                    $claudeResponse = $followBlock->text;
+                $followType = is_array($followBlock) ? ($followBlock['type'] ?? '') : ($followBlock->type ?? '');
+                if ($followType === 'text') {
+                    $claudeResponse = is_array($followBlock) ? $followBlock['text'] : $followBlock->text;
                     break;
                 }
             }
-        } elseif ($block->type === 'text') {
-            $claudeResponse = $block->text;
+        } elseif ($blockType === 'text') {
+            $claudeResponse = is_array($block) ? $block['text'] : $block->text;
         }
     }
 

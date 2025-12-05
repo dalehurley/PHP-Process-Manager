@@ -51,7 +51,13 @@ try {
             ]
         ]);
 
-        $response = $message->content[0]->text ?? '';
+        // Handle both object and array responses
+        $content = $message->content[0] ?? null;
+        if (is_array($content)) {
+            $response = $content['text'] ?? '';
+        } else {
+            $response = $content->text ?? '';
+        }
     }
 
     // Output result as JSON
